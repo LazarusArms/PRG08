@@ -7,9 +7,6 @@ function foo() {
     alert('Time to start!');
     location.reload();
 }
-window.addEventListener("load", function () {
-    new Game();
-});
 var canvas = document.querySelector('canvas');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
