@@ -80,7 +80,7 @@ function Circle(x, y, dx, dy, radius) {
     this.radius = radius;
     this.minRadius = radius;
     this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
-
+x
 
 // hier worden de objecten getekend in de venster.
     this.draw = function() {
