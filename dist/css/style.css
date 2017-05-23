@@ -1,4 +1,10 @@
 body {
     background: black;
+}
 
+button {
+    position: fixed;
+    background: none;
+    border: none;
+    color: white;
 }

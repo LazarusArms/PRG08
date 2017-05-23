@@ -19,6 +19,10 @@
 //    gameLoop();
 // }
 
+window.addEventListener("load", function() {
+    new Game();
+});
+
 var canvas = document.querySelector('canvas');
 
 
