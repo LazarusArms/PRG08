@@ -105,13 +105,16 @@ Interactivity van de getekende cirkels:
             
                     this.draw();
                 }
-
-
     }
 
 
+**Aanpassingen Cas**
 
+1: Dist folder verwijderd.
 
+2: Ik heb je code in verschillende classes opgedeeld en javascript omgezet in typescript. Het is niet de netste code, maar je kan hier misschien een beetje mee vooruit.
+Ik ben er een tijdje mee bezig geweest, krijg nu nog 1 error en dat is de volgende: circle.ts:6 Uncaught RangeError: Maximum call stack size exceeded.
 
+Als je wilt kunnen we van de week samen even kijken om het te fixen, wel een leuk project!
 
-
+Wel kan ik je meegeven om voortaan meteen in typescript te beginnen, reverse engineeren wil je niet doen :P

@@ -1,8 +1,91 @@
+///<reference path="circle.ts"/>
+
 class Game {
+    public canvas: HTMLCanvasElement;
 
-        }
+    public context: CanvasRenderingContext2D;
 
-function foo(){
-alert('Time to start!');
-location.reload();
+    private circle: Circle;
+
+    public mouse: any;
+
+    public maxRadius: number;
+
+    public colorArray;
+
+    public circleArray = Array<Object>();
+
+    protected x: number;
+    protected y: number;
+    protected dx: number;
+    protected dy: number;
+    protected radius: number;
+    protected minRadius: number;
+    protected color;
+    // aanmaak van de variabele van de muis, waarbij de coordinaten een waarden krijgen in de eventListener 'mousemove'
+    public mouseX: number;
+    public mouseY: number;
+
+
+    constructor() {
+        this.canvas = document.querySelector('canvas');
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+
+        //creeren van 2d objecten in de Canvas
+        this.context = this.canvas.getContext('2d');
+
+
+        this.maxRadius = 40;
+        this.minRadius = 3;
+
+        //kleur waardes van de kleur array die ervoor zorgt welke kleur elke cirkeltje krijgt.
+        this.colorArray = [
+            '#BD2320',
+            '#CDCDCD',
+            '#244036',
+            '#797072',
+            '#7B3F1E',
+        ];
+
+        // event listener voor de mouse move, waarbij de coordinaten worden uitgeprint in de console.
+
+        // document.addEventListener('keydown', this.move.bind(this));
+        window.addEventListener('mousemove', function (event) {
+            this.mouseX = event.x;
+            this.mouseY = event.y;
+        });
+
+
+// als het venster van grootte word aangepast.
+        document.addEventListener('resize', function () {
+            this.canvas.width = window.innerWidth;
+            this.canvas.height = window.innerHeight;
+
+
+        });
+
+
+// maakt een array aan van de cirkeltjes die getekend worden.
+//         for (let i = 0; i < 2000; i++) {
+            this.x = Math.random() * (innerWidth - this.radius * 2) + this.radius;
+            this.y = Math.random() * (innerHeight - this.radius * 2) + this.radius;
+            this.dx = (Math.random() - 0.5);
+            this.dy = (Math.random() - 0.5);
+            this.radius = Math.random() * 3 + 1;
+            this.circleArray.push(new Circle());
+        // }
+
+        requestAnimationFrame(() => this.update());
+    }
+
+    public update(): void {
+        this.draw();
+        requestAnimationFrame(() => this.update());
+    }
+
+    public draw(): void {
+        this.circle.draw();
+
+    }
 }
