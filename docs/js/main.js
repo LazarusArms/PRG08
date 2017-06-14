@@ -1,62 +1,57 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var Game = (function () {
     function Game() {
-        var _this = this;
-        this.circleArray = Array();
         this.canvas = document.querySelector('canvas');
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
         this.context = this.canvas.getContext('2d');
-        this.maxRadius = 40;
-        this.minRadius = 3;
-        this.colorArray = [
-            '#BD2320',
-            '#CDCDCD',
-            '#244036',
-            '#797072',
-            '#7B3F1E',
-        ];
-        window.addEventListener('mousemove', function (event) {
-            this.mouseX = event.x;
-            this.mouseY = event.y;
-        });
         document.addEventListener('resize', function () {
             this.canvas.width = window.innerWidth;
             this.canvas.height = window.innerHeight;
         });
-        this.x = Math.random() * (innerWidth - this.radius * 2) + this.radius;
-        this.y = Math.random() * (innerHeight - this.radius * 2) + this.radius;
-        this.dx = (Math.random() - 0.5);
-        this.dy = (Math.random() - 0.5);
-        this.radius = Math.random() * 3 + 1;
-        this.circleArray.push(new Circle());
+    }
+    return Game;
+}());
+console.log('test');
+var GameObject = (function (_super) {
+    __extends(GameObject, _super);
+    function GameObject() {
+        var _this = this;
+        _super.call(this);
+        this.colorArray = new Array();
+        this.circleArray = new Array();
+        this.maxRadius = 40;
+        this.minRadius = 3;
+        this.colorArray = new Array('#BD2320', '#CDCDCD', '#244036', '#797072', '#7B3F1E');
+        for (var i = 0; i < 2000; i++) {
+            this.x = Math.random() * (innerWidth - this.radius * 2) + this.radius;
+            this.y = Math.random() * (innerHeight - this.radius * 2) + this.radius;
+            this.dx = (Math.random() - 0.5);
+            this.dy = (Math.random() - 0.5);
+            this.radius = Math.random() * 3 + 1;
+            this.circleArray.push(new Circle());
+        }
         requestAnimationFrame(function () { return _this.update(); });
     }
-    Game.prototype.update = function () {
+    GameObject.prototype.update = function () {
         var _this = this;
         this.draw();
         requestAnimationFrame(function () { return _this.update(); });
     };
-    Game.prototype.draw = function () {
+    GameObject.prototype.draw = function () {
         this.circle.draw();
     };
-    return Game;
-}());
+    return GameObject;
+}(Game));
 var Circle = (function (_super) {
     __extends(Circle, _super);
     function Circle() {
-        var _this = _super.call(this) || this;
-        _this.color = _this.colorArray[Math.floor(Math.random() * _this.colorArray.length)];
-        return _this;
+        _super.call(this);
+        this.color = this.colorArray[Math.floor(Math.random() * this.colorArray.length)];
     }
     Circle.prototype.update = function () {
         var _this = this;
@@ -89,8 +84,6 @@ var Circle = (function (_super) {
         this.context.fill();
     };
     return Circle;
-}(Game));
-window.addEventListener("load", function () {
-    new Game();
-});
+}(GameObject));
+console.log('hallo');
 //# sourceMappingURL=main.js.map
