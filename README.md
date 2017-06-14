@@ -110,6 +110,9 @@ Interactivity van de getekende cirkels:
 
 **Aanpassingen Cas**
 
+
+Week 4
+
 1: Dist folder verwijderd.
 
 2: Ik heb je code in verschillende classes opgedeeld en javascript omgezet in typescript. Het is niet de netste code, maar je kan hier misschien een beetje mee vooruit.
@@ -118,3 +121,9 @@ Ik ben er een tijdje mee bezig geweest, krijg nu nog 1 error en dat is de volgen
 Als je wilt kunnen we van de week samen even kijken om het te fixen, wel een leuk project!
 
 Wel kan ik je meegeven om voortaan meteen in typescript te beginnen, reverse engineeren wil je niet doen :P
+
+Week 7
+
+1: Interface toegevoegd voor het tekenen van objecten.
+
+2: Singleton van je game instance gemaakt.

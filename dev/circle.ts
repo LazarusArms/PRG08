@@ -2,7 +2,7 @@
 ///<reference path="gameObject.ts"/>
 
 
-class Circle extends GameObject {
+class Circle extends GameObject implements IDrawable {
 
     constructor() {
       super();

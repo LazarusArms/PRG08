@@ -1,30 +1,9 @@
 class Game {
+    private static instance: Game;
+
     public canvas: HTMLCanvasElement;
 
     public context: CanvasRenderingContext2D;
-
-    // private circle: Circle;
-
-    // public mouse: any;
-
-    // public maxRadius: number;
-
-    // public colorArray: Array<string> = new Array();
-
-    // public circleArray: Array<Object> = new Array();
-
-    // // public circleArray = Array<Object>();
-
-    // protected x: number;
-    // protected y: number;
-    // protected dx: number;
-    // protected dy: number;
-    // protected radius: number;
-    // protected minRadius: number;
-    // protected color;
-    // // aanmaak van de variabele van de muis, waarbij de coordinaten een waarden krijgen in de eventListener 'mousemove'
-    // public mouseX: number;
-    // public mouseY: number;
 
 
     constructor() {
@@ -48,6 +27,13 @@ class Game {
         // let circle = new Circle;
 
      }
+
+    public static getInstance() {
+        if (!Game.instance) {
+            Game.instance = new Game();
+        }
+        return Game.instance;
+    }
 }
 
 console.log('test');
