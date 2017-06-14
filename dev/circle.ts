@@ -1,7 +1,8 @@
 ///<reference path="game.ts"/>
+///<reference path="gameObject.ts"/>
 
 
-class Circle extends Game{
+class Circle extends GameObject {
 
     constructor() {
       super();
@@ -48,3 +49,5 @@ class Circle extends Game{
         this.context.fill();
     }
 }
+
+console.log('hallo');
