@@ -127,3 +127,5 @@ Week 7
 1: Interface toegevoegd voor het tekenen van objecten.
 
 2: Singleton van je game instance gemaakt.
+
+Verder mis je veel man, ik vraag me af of je het nog gaat halen. Als ik je moet helpen doe ik het graag. Maar je code werkt nog niet en je mist te veel onderdelen van de criteria.
